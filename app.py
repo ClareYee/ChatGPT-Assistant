@@ -269,7 +269,7 @@ area_error = st.empty()
 st.write("\n")
 st.header("ChatGPT Assistant")
 tap_input, tap_context, tap_model, tab_func = st.tabs(
-    ["AI会话", "功能选择", "API", "其他"]
+    ["AI会话", "功能选择", "API（勿改动）", "其他"]
 )
 
 with tap_context:
@@ -296,7 +296,7 @@ with tap_context:
     )
 
 with tap_model:
-    st.markdown("OpenAI API Key (可选)")
+    st.markdown("API Key (已配置)")
     st.text_input(
         "API Key (已配置)",
         type="password",
@@ -304,7 +304,7 @@ with tap_model:
         label_visibility="collapsed",
     )
     st.caption(
-        "此Key仅在当前网页有效，且优先级高于Secrets中的配置，仅自己可用，他人无法共享。[官网获取](https://platform.openai.com/account/api-keys)"
+        "API Key 已配置，请勿填写。"
     )
 
     st.markdown("包含对话次数：")
