@@ -14,7 +14,7 @@ if "apibase" in st.secrets:
 else:
     openai.api_base = "https://api.openai.com/v1"
 
-st.set_page_config(page_title="PooshAI", layout="wide", page_icon="🤖")
+st.set_page_config(page_title="ChatGPT Assistant", layout="wide", page_icon="🤖")
 # 自定义元素样式
 st.markdown(css_code, unsafe_allow_html=True)
 
@@ -127,14 +127,14 @@ def delete_chat_fun():
 with st.sidebar:
     c1, c2 = st.columns(2)
     create_chat_button = c1.button(
-        "新建会话", use_container_width=True, key="create_chat_button"
+        "新建", use_container_width=True, key="create_chat_button"
     )
     if create_chat_button:
         create_chat_fun()
         st.experimental_rerun()
 
     delete_chat_button = c2.button(
-        "删除会话", use_container_width=True, key="delete_chat_button"
+        "删除", use_container_width=True, key="delete_chat_button"
     )
     if delete_chat_button:
         delete_chat_fun()
@@ -150,9 +150,9 @@ with st.sidebar:
 
     st.write("\n")
     st.write("\n")
-    st.text_input("设定窗口名称：", key="set_chat_name", placeholder="确定")
+    st.text_input("设定窗口名称：", key="set_chat_name", placeholder="点击输入")
     st.selectbox(
-        "AI模型：", index=0, options=["gpt-3.5-turbo"], key="select_model"
+        "选择模型：", index=0, options=["gpt-3.5-turbo", "gpt-4"], key="select_model"
     )
     st.write("\n")
     st.caption(
@@ -162,7 +162,10 @@ with st.sidebar:
     """
     )
     st.markdown(
-        
+        '<a href="https://github.com/PierXuY/ChatGPT-Assistant" target="_blank" rel="ChatGPT-Assistant">'
+        '<img src="https://badgen.net/badge/icon/GitHub?icon=github&amp;label=ChatGPT Assistant" alt="GitHub">'
+        "</a>",
+        unsafe_allow_html=True,
     )
 
 # 加载数据
@@ -266,7 +269,7 @@ area_error = st.empty()
 st.write("\n")
 st.header("ChatGPT Assistant")
 tap_input, tap_context, tap_model, tab_func = st.tabs(
-    ["AI处理", "功能选择", "⚙️ 模型", "设置"]
+    ["💬 聊天", "🗒️ 预设", "⚙️ 模型", "🛠️ 功能"]
 )
 
 with tap_context:
@@ -275,7 +278,7 @@ with tap_context:
         st.session_state["context_select" + current_chat + "value"]
     )
     st.selectbox(
-        label="选择功能",
+        label="选择上下文",
         options=set_context_list,
         key="context_select" + current_chat,
         index=context_select_index,
