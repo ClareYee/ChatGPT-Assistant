@@ -374,10 +374,10 @@ with tap_model:
 with tab_func:
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.button("清空聊天记录", use_container_width=True, on_click=clear_button_callback)
+        st.button("清空全部记录", use_container_width=True, on_click=clear_button_callback)
     with c2:
         btn = st.download_button(
-            label="导出聊天记录",
+            label="导出会话记录",
             data=download_history(st.session_state["history" + current_chat]),
             file_name=f'{current_chat.split("_")[0]}.md',
             mime="text/markdown",
@@ -385,7 +385,7 @@ with tab_func:
         )
     with c3:
         st.button(
-            "删除所有窗口", use_container_width=True, on_click=delete_all_chat_button_callback
+            "删除所有会话", use_container_width=True, on_click=delete_all_chat_button_callback
         )
 
     st.write("\n")
@@ -437,7 +437,7 @@ with tap_input:
             value=st.session_state["user_voice_value"],
         )
         submitted = st.form_submit_button(
-            "确认提交", use_container_width=True, on_click=input_callback
+            "提交", use_container_width=True, on_click=input_callback
         )
     if submitted:
         st.session_state["user_input_content"] = user_input
@@ -517,11 +517,11 @@ if st.session_state["user_input_content"] != "":
             )
         except (FileNotFoundError, KeyError):
             area_error.error(
-                "缺失 OpenAI API Key，请在复制项目后配置Secrets，或者在模型选项中进行临时配置。"
+                "缺失API Key，请在复制项目后配置Secrets，或者在模型选项中进行临时配置。"
                 "详情见[项目仓库](https://github.com/PierXuY/ChatGPT-Assistant)。"
             )
         except openai.error.AuthenticationError:
-            area_error.error("无效的 OpenAI API Key。")
+            area_error.error("无效的API Key。")
         except openai.error.APIConnectionError as e:
             area_error.error("连接超时，请重试。报错：   \n" + str(e.args[0]))
         except openai.error.InvalidRequestError as e:
