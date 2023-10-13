@@ -127,14 +127,14 @@ def delete_chat_fun():
 with st.sidebar:
     c1, c2 = st.columns(2)
     create_chat_button = c1.button(
-        "新建", use_container_width=True, key="create_chat_button"
+        "新建会话", use_container_width=True, key="create_chat_button"
     )
     if create_chat_button:
         create_chat_fun()
         st.experimental_rerun()
 
     delete_chat_button = c2.button(
-        "删除", use_container_width=True, key="delete_chat_button"
+        "删除会话", use_container_width=True, key="delete_chat_button"
     )
     if delete_chat_button:
         delete_chat_fun()
@@ -152,7 +152,7 @@ with st.sidebar:
     st.write("\n")
     st.text_input("设定会话名称：", key="set_chat_name", placeholder="输入会话名")
     st.selectbox(
-        "AI模型：", index=0, options=["gpt-3.5-turbo", "gpt-4"], key="select_model"
+        "AI模型：", index=0, options=["gpt-3.5-turbo"], key="select_model"
     )
     st.write("\n")
     st.caption(
