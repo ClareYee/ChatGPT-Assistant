@@ -152,7 +152,7 @@ with st.sidebar:
     st.write("\n")
     st.text_input("设定会话名称：", key="set_chat_name", placeholder="输入会话名")
     st.selectbox(
-        "AI模型：", index=0, options=["gpt-3.5-turbo"], key="select_model"
+        "AI模型：", index=0, options=["PooshAI"], key="select_model"
     )
     st.write("\n")
     st.caption(
