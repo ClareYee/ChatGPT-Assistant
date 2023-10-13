@@ -269,7 +269,7 @@ area_error = st.empty()
 st.write("\n")
 st.header("ChatGPT Assistant")
 tap_input, tap_context, tap_model, tab_func = st.tabs(
-    ["💬 聊天", "🗒️ 预设", "⚙️ 模型", "🛠️ 功能"]
+    ["AI会话", "功能选择", "API", "其他"]
 )
 
 with tap_context:
