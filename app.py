@@ -267,7 +267,7 @@ area_gpt_content = st.empty()
 area_error = st.empty()
 
 st.write("\n")
-st.header("ChatGPT Assistant")
+st.header("PooshAI 助手")
 tap_input, tap_context, tap_model, tab_func = st.tabs(
     ["AI会话", "功能选择", "API（勿改动）", "其他"]
 )
