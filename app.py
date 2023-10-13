@@ -299,7 +299,7 @@ with tap_model:
     st.markdown("OpenAI API Key (可选)")
     st.text_input(
         "API Key (已配置)",
-        type="0",
+        type="password",
         key="apikey_input",
         label_visibility="collapsed",
     )
