@@ -161,7 +161,12 @@ with st.sidebar:
     - Ctrl + Enter 可快捷提交问题
     """
     )
-
+    st.markdown(
+        '<a href="https://5svsbaxbhehtfzwjevi2kt.streamlit.app/" target="_blank" rel="PooshAI">'
+        '<img src="https://badgen.net/badge/icon/GitHub?icon=github&amp;label=PooshAI" alt="GitHub">'
+        "</a>",
+        unsafe_allow_html=True,
+    )
 
 # 加载数据
 if "history" + current_chat not in st.session_state:
