@@ -278,7 +278,7 @@ with tap_context:
         st.session_state["context_select" + current_chat + "value"]
     )
     st.selectbox(
-        label="选择上下文",
+        label="选择功能",
         options=set_context_list,
         key="context_select" + current_chat,
         index=context_select_index,
