@@ -163,7 +163,7 @@ with st.sidebar:
     )
     st.markdown(
         '<a href="https://5svsbaxbhehtfzwjevi2kt.streamlit.app/" target="_blank" rel="PooshAI">'
-        '<img src="https://badgen.net/badge/icon/GitHub?icon=github&amp;label=PooshAI" alt="GitHub">'
+        '<img src="https://badgen.net/badge/icon/GitHub?icon=github&amp;label=PooshAI" alt="Streamlit">'
         "</a>",
         unsafe_allow_html=True,
     )
