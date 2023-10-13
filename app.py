@@ -14,7 +14,7 @@ if "apibase" in st.secrets:
 else:
     openai.api_base = "https://api.openai.com/v1"
 
-st.set_page_config(page_title="PooshAI", layout="wide", page_icon="🤖")
+st.set_page_config(page_title="PooshAI", layout="wide")
 # 自定义元素样式
 st.markdown(css_code, unsafe_allow_html=True)
 
