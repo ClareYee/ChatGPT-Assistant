@@ -14,7 +14,7 @@ if "apibase" in st.secrets:
 else:
     openai.api_base = "https://api.openai.com/v1"
 
-st.set_page_config(page_title="ChatGPT Assistant", layout="wide", page_icon="🤖")
+st.set_page_config(page_title="PooshAI", layout="wide", page_icon="🤖")
 # 自定义元素样式
 st.markdown(css_code, unsafe_allow_html=True)
 
@@ -40,7 +40,7 @@ if "initial_settings" not in st.session_state:
     st.session_state["initial_settings"] = True
 
 with st.sidebar:
-    st.markdown("# 🤖 聊天窗口")
+    st.markdown("# 所有会话")
     # 创建容器的目的是配合自定义组件的监听操作
     chat_container = st.container()
     with chat_container:
@@ -150,9 +150,9 @@ with st.sidebar:
 
     st.write("\n")
     st.write("\n")
-    st.text_input("设定窗口名称：", key="set_chat_name", placeholder="点击输入")
+    st.text_input("设定会话名称：", key="set_chat_name", placeholder="输入会话名")
     st.selectbox(
-        "选择模型：", index=0, options=["gpt-3.5-turbo", "gpt-4"], key="select_model"
+        "AI模型：", index=0, options=["gpt-3.5-turbo", "gpt-4"], key="select_model"
     )
     st.write("\n")
     st.caption(
