@@ -296,9 +296,9 @@ with tap_context:
     )
 
 with tap_model:
-    st.markdown("API Key (已配置)")
+    st.markdown("OpenAI API Key (可选)")
     st.text_input(
-        "OpenAI API Key (可选)",
+        "API Key (已配置)",
         type="0",
         key="apikey_input",
         label_visibility="collapsed",
