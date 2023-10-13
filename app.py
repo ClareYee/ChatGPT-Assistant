@@ -284,13 +284,13 @@ with tap_context:
     )
     st.caption(set_context_all[st.session_state["context_select" + current_chat]])
 
-    +++st.text_area(
+    st.text_area(
         label="补充或自定义上下文：",
         key="context_input" + current_chat,
         value=st.session_state["context_input" + current_chat + "value"],
         on_change=callback_fun,
         args=("context_input",),
-    )+++
+    )
 
 with tap_model:
     st.markdown("OpenAI API Key (可选)")
