@@ -160,9 +160,7 @@ with st.sidebar:
     - 双击页面可直接定位输入栏
     - Ctrl + Enter 可快捷提交问题
     """
-    )
 
-    )
 
 # 加载数据
 if "history" + current_chat not in st.session_state:
